@@ -1,0 +1,155 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f7b733;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    background: #000;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+}
+
+.hero-text h3 {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.hero-text .highlight {
+    color: #f7b733;
+}
+
+.btns {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #f7b733;
+    color: #000;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background: #fff;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    padding: 60px;
+    background: #111;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-content h2 {
+    color: #f7b733;
+    margin-bottom: 10px;
+}
+
+.about-content ul li {
+    margin: 5px 0;
+}
+
+.about-content .btn {
+    margin-top: 20px;
+}
+
+/* Skills Section */
+.skills {
+    padding: 60px;
+    background: #000;
+    text-align: center;
+}
+
+.skills h2 {
+    color: #f7b733;
+    margin-bottom: 10px;
+}
+
+.skill-bars {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.bar {
+    width: 100%;
+    background: #333;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.fill {
+    background: #f7b733;
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,78 @@
+/* General page styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #dceefb, #e0f7fa);
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* Center and style the caption */
+caption {
+    caption-side: top;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Header row */
+thead th {
+    background-color: #3498db;
+    color: #fff;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 1.1em;
+}
+
+/* Table body rows */
+tbody td {
+    padding: 12px 16px;
+    border-top: 1px solid #eee;
+}
+
+/* Zebra striping */
+tbody tr:nth-child(odd) {
+    background-color: #f8faff;
+}
+
+/* Hover effect */
+tbody tr:hover {
+    background-color: #e0f0ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Empty cell styling (optional for emphasis) */
+/* td:empty {
+    background-color: #fff8dc;
+    color: #999;
+    font-style: italic;
+} */
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    thead th, tbody td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    caption {
+        font-size: 1.4em;
+    }
+}

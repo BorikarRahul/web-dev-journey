@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists - HTML Tutorial</title>
+    <style>
+        /* Base styling for all lists */
+        ul,
+        ol {
+            margin: 20px 0;
+            padding-left: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Unordered list - custom bullet */
+        ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            /* Blue bullet */
+            font-weight: bold;
+        }
+
+        /* Ordered list - with number styling */
+        ol {
+            counter-reset: list-counter;
+        }
+
+        ol li {
+            counter-increment: list-counter;
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        ol li::before {
+            content: counter(list-counter) ".";
+            position: absolute;
+            left: 0;
+            color: #e67e22;
+            /* Orange number */
+            font-weight: bold;
+        }
+
+        /* Hover effect for all list items */
+        ul li:hover,
+        ol li:hover {
+            color: #2c3e50;
+            cursor: default;
+        }
+
+        /* Base styling for definition list */
+        dl {
+            margin: 20px 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Term (dt) styling */
+        dt {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 1em;
+        }
+
+        /* Description (dd) styling */
+        dd {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        /* Optional: Add separator line */
+        dt::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #eee;
+            margin: 6px 0;
+        }
+
+        /* Optional hover effect */
+        dd:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lists in HTML</h1>
+    <h3>Unordered List</h3>
+    <ul>
+        <li>Responsive Design</li>
+        <li>Fast Performance</li>
+        <li>Easy Customization</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol>
+        <li>Download the app</li>
+        <li>Register an account</li>
+        <li>Start using features</li>
+    </ol>
+
+    <!-- Orderd List -->
+    <h3>Steps to bake a cake</h3>
+    <ol>
+
+        <li>Preheat the oven to 350°F (175°C).</li>
+        <!-- For Degree Symbol Press ALT + 0176 -->
+        <li>Cream sugar and butter together in a mixing bowl.</li>
+        <li> Add eggs, one at a time, beating briefly after each addition. Mix in vanilla.</li>
+        <li>Combine wet And dry ingredient</li>
+        <li>Over the batter into the pan and bake for 30 minutes</li>
+        <li>Let's the cake cool before serving</li>
+
+    </ol>
+    <!-- Unordered List -->
+    <h3>Groceries to Buy</h3>
+    <ul>
+        <li>Milk</li>
+        <li>Bread</li>
+        <li>eggs</li>
+        <li>Buttor</li>
+        <li>Vegitables</li>
+    </ul>
+    <!-- Defination List -->
+    <h3>Programming Languages</h3>
+    <dl>
+        <!-- Defination terms -->
+        <dt>Python</dt>
+        <!-- Defination Data -->
+        <dd>A high-level, interpreted programming language known for its easy of use.</dd>
+
+        <dt>JavaScript</dt>
+        <dd>A scripting language primarily used for dynamic web pages</dd>
+
+        <dt>HTML</dt>
+        <dd>The standard markup language for creating a web pages.</dd>
+
+        <dt>CSS</dt>
+        <dd>A style sheet language used to describe the Presentation of a document written in Html</dd>
+
+    </dl>
+    <h3>Product Features</h3>
+    <dl>
+        <dt>Design</dt>
+        <dd>Sleek, minimal, and built for usability.</dd>
+
+        <dt>Battery Life</dt>
+        <dd>Lasts up to 12 hours on a single charge.</dd>
+
+        <dt>Warranty</dt>
+        <dd>1-year limited warranty covering manufacturer defects.</dd>
+    </dl>
+
+
+</body>
+
+</html>

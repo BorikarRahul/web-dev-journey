@@ -1,0 +1,88 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f0f8ff, #e0f7fa);
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* Page Heading */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Form Container */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+form div {
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Input Focus */
+input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Typography */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    form {
+        padding: 20px;
+    }
+}

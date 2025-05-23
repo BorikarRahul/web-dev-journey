@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        select {
+            background-color: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* input[type="radio"], */
+        input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.1);
+        }
+
+        button[type="submit"] {
+            background-color: #4daa00;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Forms in HTML</h1>
+    <!-- form data will be store in submit.php this is the use of action attribute -->
+    <form action="/submit.php">
+        <!-- Text input for Name -->
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Enter Name" required>
+        </div>
+        <!-- Phone Input -->
+        <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="Enter Phone" required>
+        </div>
+        <!-- Email Input -->
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter Your E-mail" required>
+        </div>
+        <!-- Password Input -->
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter Your Password" required>
+        </div>
+        <!-- Date Input -->
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input id="dob" type="date" required>
+        </div>
+        <!-- Dropdown (select input for Gender) -->
+        <div>
+            <label for="gender">Gender</label>
+            <select name="Gender" id="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="femail">Female</option>
+                <option value="other">other</option>
+            </select>
+        </div>
+        <!-- Radio buttons for Subscription Plan -->
+        <div>
+            <p>Subscription Plan</p>
+            <input type="radio" name="subscription" id="basic" value="basic">
+            <label for="basic">Basic</label>
+            <input type="radio" name="subscription" id="premium" value="premium">
+            <label for="premium">Premium</label>
+            <input type="radio" name="subscription" id="vip" value="vip">
+            <label for="vip">VIP</label>
+        </div>
+        <!-- Checkbox for agreeing to terms -->
+        <div>
+            <input type="checkbox" name="agree" id="agree" required>
+            <label for="agree">I agree to the terms and condition</label>
+        </div>
+        <!-- Textarea for comments -->
+        <div>
+            <label for="comments">Comments</label>
+            <textarea name="comments" id="comments" placeholder="Enter your Comments" rows="4"></textarea>
+        </div>
+        <!-- Submit button -->
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
