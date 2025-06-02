@@ -1,0 +1,21 @@
+ .common{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.tl{
+    
+    border: 2px solid black;
+    position: absolute;
+    align-items: center;
+ }
+
+ #one{
+        background-color: red;
+ }
+ #two{
+        background-color: orange;
+ }
+ #three{
+        background-color: green;
+ }

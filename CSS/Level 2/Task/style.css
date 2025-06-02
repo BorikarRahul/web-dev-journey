@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#navbar{
+    height: 60px;
+    background-color: #0f1111;
+    text-align: center;
+}
+button{
+    background-color: #f08800;
+}
+#logo{
+    background-color: #f08800;;
+}
+a{
+    text-align: center;
+    margin-right: 90px;
+    text-decoration: none;
+}
+#content{
+    height: 89vh;
+    
+}
+.contentBox{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    display: inline-block
+}
+.one{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.two{
+    background-color: rgba(0, 255, 0, 0.5);
+}
+.three{
+    background-color: rgba(0, 0, 255, 0.5);
+}
+footer{
+    background-color: #0f1111;
+    color: white;
+    text-align: center;
+}
