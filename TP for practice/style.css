@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  background: #0f0f0f;
+  color: white;
+  text-align: center;
+  transition: background 0.5s, color 0.5s;
+}
+
+body.light {
+  background: #f0f0f0;
+  color: #111;
+}
+
+#modeToggle {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+body.light #modeToggle {
+  background: #ddd;
+  color: #111;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card.glass:hover {
+  box-shadow: 0 25px 60px rgba(255, 255, 255, 0.2);
+}
+
+.card .date {
+  background: rgba(0,0,0,0.7);
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.card .date span {
+  font-size: 24px;
+  display: block;
+}
+
+.card.red {
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+}
+
+.card.red .date span {
+  color: red;
+}
+
+.card.green {
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 255, 0, 0.3);
+}
+
+.card.green .date span {
+  color: limegreen;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 5px currentColor;
+}

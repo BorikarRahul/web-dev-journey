@@ -1,5 +1,21 @@
 # CSS tutorial
 
+    [Docs Link](https://drive.google.com/drive/folders/1aUkX1itCHXsYgoRdC-RIJgloZmz2eC-F)
+
+## 📑 Table of Contents
+
+- [CSS Property to Apply Style in HTML Page](#css-property-to-apply-style-in-html-page)
+- [Color System](#color-system)
+- [Selectors](#selectors)
+- [Text Property](#text-property)
+- [Units in CSS](#units-in-css)
+- [CSS Box Model](#css-box-model)
+- [Display Property](#display-property)
+- [Position](#position)
+- [z-index](#z-index)
+- [Background-image](#background-image)
+- [Background-size](#background-size)
+
 basic Syntax css
 
 ```css CSS Property use in External file
@@ -371,3 +387,342 @@ The `z-index` property in CSS controls the **stacking order** of positioned elem
 | number | Stacks according to the integer value given. |
 
 **Tip:** Use `z-index` to manage overlapping elements, such as modals, dropdowns, and tooltips.
+
+#### Background-image
+
+The `background-image` property sets an image as the background of an element.
+
+```css
+body {
+  background-image: url("image.jpg");
+}
+```
+
+#### Background-size
+
+The `background-size` property specifies how the background image should be scaled.
+
+| Value   | Description                                                          |
+| ------- | -------------------------------------------------------------------- |
+| cover   | Scales the image to cover the entire element, cropping if necessary. |
+| contain | Scales the image to be fully visible, fitting inside the element.    |
+| auto    | Default. Keeps the original size of the image.                       |
+
+**Examples:**
+
+```css
+/* Cover the entire element */
+.background-cover {
+  background-image: url("image.jpg");
+  background-size: cover;
+}
+
+/* Contain the image within the element */
+.background-contain {
+  background-image: url("image.jpg");
+  background-size: contain;
+}
+
+/* Use the image's original size */
+.background-auto {
+  background-image: url("image.jpg");
+  background-size: auto;
+}
+```
+
+#### Flexbox
+
+flexible Box Layout => it is a one-dimensional layout method for arranging items in rows or columns.
+Flexbox is a powerful layout model in CSS that allows you to design complex layouts with ease. It provides a way to align and distribute space among items in a container, even when their size is unknown or dynamic.
+
+The Flex Model => Flex Container, flex Item, Main Axis, Cross Axis
+
+- Display: flex; ( Horizontal Direction )
+  - Cross Axis:
+  - Main Axis:
+    - Flexbox Direction: = it sets how flex items are placed in the flex container, defining the direction of the main axis.
+      - flex-direction: row ( Default, Horizontal )
+      - flex-direction: column ( Vertical )
+      - flex-direction: row-reverse ( Reverse Horizontal )
+      - flex-direction: column-reverse ( Reverse Vertical )
+    - Flex Properties: = it controls how flex items are laid out in the flex container.
+      - justify-content: flex-start / flex-end / center / space-between / space-around / space-evenly;
+      - flex-wrap: nowrap / wrap / wrap-reverse
+      - align-items: stretch / flex-start / flex-end / center / baseline; (alignment along the cross azis).
+      - align-content: flex-start / flex-end / center / space-between / space-around / stretch;(alignment of space between & around the content along cross axis).
+      - align-self: auto / flex-start / flex-end / center / baseline / stretch; (alignment of individual item along cross axis).
+      - flex-grow: how much a flex item will grow relative to the rest of the flex items if space is available.
+      - flex-shrink: how much a flex item will shrink relative to the rest of the flex items if space is limited.
+
+## Media Queries
+
+- Help create a responsive website that adapts to different screen sizes and devices.
+
+```css
+@media (width: 600px) {
+  body {
+    background-color: yellow;
+  }
+}
+@media (max-width: 599px) {
+  body {
+    background-color: lightblue;
+  }
+}
+@media (min-width: 601px) {
+  body {
+    background-color: red;
+  }
+}
+```
+
+## Media Queries
+
+Media Queries are a feature of CSS that allow you to apply styles based on the characteristics of the device or viewport, such as its width, height, orientation, or resolution. They are essential for creating **responsive web designs** that look good on all screen sizes (mobile, tablet, desktop, etc.).
+
+### How Media Queries Work
+
+A media query uses the `@media` rule to include a block of CSS only if a certain condition is true.
+
+**Basic Syntax:**
+
+```css
+@media (condition) {
+  /* CSS rules here */
+}
+```
+
+**Example:**
+
+```css
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+_This will apply the background color only if the viewport width is 600px or less._
+
+---
+
+### Common Media Features
+
+| Feature       | Description                                 | Example                           |
+| ------------- | ------------------------------------------- | --------------------------------- |
+| `max-width`   | Applies styles up to a maximum width        | `@media (max-width: 600px)`       |
+| `min-width`   | Applies styles from a minimum width and up  | `@media (min-width: 601px)`       |
+| `max-height`  | Applies styles up to a maximum height       | `@media (max-height: 800px)`      |
+| `min-height`  | Applies styles from a minimum height and up | `@media (min-height: 500px)`      |
+| `orientation` | Applies styles based on device orientation  | `@media (orientation: landscape)` |
+| `resolution`  | Applies styles based on screen resolution   | `@media (min-resolution: 2dppx)`  |
+
+---
+
+### Combining Media Queries
+
+You can combine multiple conditions using `and`, `,` (comma for OR), or `not`.
+
+```css
+@media (min-width: 600px) and (max-width: 900px) {
+  /* Styles for tablets */
+}
+```
+
+---
+
+### Practical Example
+
+```css
+/* Mobile styles */
+@media (max-width: 600px) {
+  .container {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    font-size: 16px;
+    padding: 20px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .container {
+    font-size: 18px;
+    padding: 30px;
+  }
+}
+```
+
+---
+
+### Key Points
+
+- Media queries help make your website **responsive**.
+- Use `max-width` for mobile-first design (styles apply up to a certain width).
+- Use `min-width` for desktop-first design (styles apply from a certain width and up).
+- You can target specific devices, orientations, and resolutions.
+
+**Tip:** Always test your site on different devices or use browser developer tools to simulate various screen sizes.
+
+---
+
+## Advance CSS
+
+Transition, Animation, Transform
+
+## Transition, Animation, Transform
+
+These are advanced CSS features used to create interactive and visually appealing effects on web pages.
+
+---
+
+### 1. Transition
+
+Transitions allow you to smoothly change property values over a given duration.
+Transition enable you to define the transition between two states of an element, such as when a user hovers over it or when it is focused. This can enhance the user experience by providing visual feedback.
+
+- transition-property: property you want to transition ( font-size, width, etc. ).
+- transition-duration: how long the transition takes (e.g., 0.3s/ 2s/ 3ms...).
+- transition-timing-function: the speed curve of the transition (ease-in/ ease-out/ linear/ steps...).
+- transition-delay: delay before the transition starts (e.g., 0.2s/ 2s / 2ms).
+
+**Syntax:**
+
+```css
+selector {
+  transition: property duration timing-function delay;
+}
+```
+
+**Example:**
+
+```css
+.button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: green;
+}
+```
+
+_When you hover over the button, the background color will smoothly change from blue to green._
+
+| Property                   | Description                             |
+| -------------------------- | --------------------------------------- |
+| transition                 | Shorthand for all transition properties |
+| transition-property        | The CSS property to animate             |
+| transition-duration        | How long the transition takes           |
+| transition-timing-function | Speed curve (ease, linear, etc.)        |
+| transition-delay           | Delay before the transition starts      |
+
+````css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transition: all 2s ease-in 1s; /* Transition all properties over 2 seconds, easing in, with a 1 second delay */
+  /* You can also specify individual properties */
+  /* transition: property duration timing-function delay */
+}
+
+---
+
+### 2. Animation
+
+Animations allow you to change CSS properties in steps using keyframes.
+
+**Syntax:**
+
+```css
+@keyframes slide {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100px;
+  }
+}
+.box {
+  position: relative;
+  animation: slide 2s infinite alternate;
+}
+````
+
+| Property                  | Description                              |
+| ------------------------- | ---------------------------------------- |
+| animation                 | Shorthand for all animation properties   |
+| animation-name            | Name of the keyframes to use             |
+| animation-duration        | How long the animation takes             |
+| animation-timing-function | Speed curve                              |
+| animation-delay           | Delay before animation starts            |
+| animation-iteration-count | Number of times to repeat                |
+| animation-direction       | Direction of animation (normal, reverse) |
+
+---
+
+### 3. Transform
+
+The `transform` property lets you move, rotate, scale, and skew elements.
+
+**Syntax & Examples:**
+
+```css
+.box {
+  transform: translateX(50px); /* Move right 50px */
+  transform: rotate(45deg); /* Rotate 45 degrees */
+  transform: scale(1.5); /* Scale 1.5 times */
+  transform: skew(20deg, 10deg); /* Skew X and Y */
+}
+```
+
+| Function  | Description        | Example              |
+| --------- | ------------------ | -------------------- |
+| translate | Moves an element   | `translateX(50px)`   |
+| rotate    | Rotates an element | `rotate(45deg)`      |
+| scale     | Scales an element  | `scale(1.5)`         |
+| skew      | Skews an element   | `skew(20deg, 10deg)` |
+
+---
+
+**Tip:**  
+Combine these properties for interactive UI effects, such as animated buttons, loaders, and image galleries.
+
+### Common CSS Pseudo-classes
+
+CSS pseudo-classes are keywords added to selectors that specify a special state of the selected elements. They are used to style elements based on user interaction, position in the DOM, or other conditions.
+
+| Pseudo-class     | Description                                                  | Example Usage              |
+| ---------------- | ------------------------------------------------------------ | -------------------------- |
+| `:hover`         | Styles an element when the mouse pointer is over it          | `button:hover { ... }`     |
+| `:active`        | Styles an element when it is being activated (e.g., clicked) | `a:active { ... }`         |
+| `:focus`         | Styles an element when it has focus (e.g., input clicked)    | `input:focus { ... }`      |
+| `:visited`       | Styles links that have been visited                          | `a:visited { ... }`        |
+| `:first-child`   | Styles the first child of its parent                         | `li:first-child { ... }`   |
+| `:last-child`    | Styles the last child of its parent                          | `li:last-child { ... }`    |
+| `:nth-child(n)`  | Styles the nth child of its parent                           | `tr:nth-child(2) { ... }`  |
+| `:checked`       | Styles checked input elements (checkbox, radio)              | `input:checked { ... }`    |
+| `:disabled`      | Styles disabled form elements                                | `button:disabled { ... }`  |
+| `:not(selector)` | Styles every element that does NOT match the selector        | `div:not(.active) { ... }` |
+| `:empty`         | Styles elements with no children                             | `div:empty { ... }`        |
+| `:required`      | Styles required input fields                                 | `input:required { ... }`   |
+
+**Example:**
+
+```css
+button:hover {
+  background-color: orange;
+}
+input:focus {
+  border: 2px solid blue;
+}
+li:first-child {
+  font-weight: bold;
+}
+```

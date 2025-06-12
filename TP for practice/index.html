@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilt Card with Glassmorphism</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button type="button" id="modeToggle">Toggle Mode</button>
+    <h2>HTML/CSS</h2>
+    <div class="cards">
+        <div class="card glass red" data-tilt>
+            <div class="date">June<br><span>29</span></div>
+            <h3>Card Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="#">See More</a>
+        </div>
+
+        <div class="card glass green" data-tilt>
+            <div class="date">June<br><span>29</span></div>
+            <h3>Card Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="#">See More</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('modeToggle');
+        toggleBtn.onclick = () => document.body.classList.toggle('light');
+    </script>
+</body>
+
+</html>

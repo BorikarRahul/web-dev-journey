@@ -1,0 +1,68 @@
+.hello {
+  width: 100px;
+  height: 100px;
+  background-color: chocolate;
+  border: 2px solid black;
+}
+/* Green for less than 300px */
+@media (max-width: 299px) {
+  .hello {
+    background-color: green;
+  }
+}
+
+/* Pink for 300px to 400px */
+@media (min-width: 300px) and (max-width: 400px) {
+  .hello {
+    background-color: pink;
+  }
+}
+
+/* Red for 401px to 600px */
+@media (min-width: 401px) and (max-width: 600px) {
+  .hello {
+    background-color: red;
+  }
+}
+
+/* Blue for above 600px */
+@media (min-width: 601px) {
+  .hello {
+    background-color: blue;
+  }
+}
+/* ...existing code... */
+.div-color {
+  width: 200px;
+  height: 100px;
+  background-color: gray; /* default color */
+}
+
+/* Green for less than 300px */
+@media (max-width: 299px) {
+  .div-color {
+    background-color: green;
+  }
+}
+
+/* Pink for 300px to 400px */
+@media (min-width: 300px) and (max-width: 400px) {
+  .div-color {
+    background-color: pink;
+  }
+}
+
+/* Red for 401px to 600px */
+@media (min-width: 401px) and (max-width: 600px) {
+  .div-color {
+    background-color: red;
+  }
+}
+
+/* Blue for above 600px */
+@media (min-width: 601px) {
+  .div-color {
+    background-color: blue;
+  }
+}
+/* ...existing code... */

@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#navbar{
+    width: 100%;
+    height: 50px;
+    border: 2px solid black;
+    background-color: rgb(152, 194, 236);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    text-decoration:none ;
+    color: black;
+}
+li{
+    list-style-type: none;
+}
+#center{
+    width: 100%;
+    height: 300px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    background-color: black;
+     
+}
+#center > div{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    align-self: center;
+}
