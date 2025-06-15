@@ -171,3 +171,154 @@ console.log(typeof uniqueId); // "symbol"
 - Use `null` to intentionally clear a variable.
 - Use `undefined` for uninitialized variables (default).
 - Use `Symbol` for unique keys in objects, especially when you want to avoid
+
+---
+
+## JavaScript Basics Explained
+
+### Array
+
+An array is a collection of values stored in a single variable. Arrays can hold any data type.
+
+**Example:**
+
+```js
+let fruits = ["apple", "banana", "orange"];
+```
+
+---
+
+### Object
+
+An object stores data as key-value pairs. Each key (property) has a value.
+
+**Example:**
+
+```js
+let person = {
+  name: "Rahul",
+  age: 25,
+};
+```
+
+---
+
+### for Loop
+
+A `for` loop repeats a block of code a specific number of times.
+
+**Example:**
+
+```js
+for (let i = 0; i < 3; i++) {
+  console.log(i); // 0, 1, 2
+}
+```
+
+---
+
+### while Loop
+
+A `while` loop repeats a block of code as long as a condition is true.
+
+**Example:**
+
+```js
+let i = 0;
+while (i < 3) {
+  console.log(i);
+  i++;
+}
+```
+
+---
+
+### if Statement
+
+Executes code if a condition is true.
+
+**Example:**
+
+```js
+if (age > 18) {
+  console.log("Adult");
+}
+```
+
+---
+
+### if else Statement
+
+Executes one block if the condition is true, another if it is false.
+
+**Example:**
+
+```js
+if (age > 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}
+```
+
+---
+
+### if elseif Statement
+
+Checks multiple conditions in sequence.
+
+**Example:**
+
+```js
+if (score > 90) {
+  console.log("Excellent");
+} else if (score > 75) {
+  console.log("Good");
+} else {
+  console.log("Needs Improvement");
+}
+```
+
+---
+
+### forEach
+
+Executes a function for each element in an array.
+
+**Example:**
+
+```js
+fruits.forEach(function (fruit) {
+  console.log(fruit);
+});
+```
+
+---
+
+### map
+
+Creates a new array by applying a function to each element.
+
+**Example:**
+
+```js
+let lengths = fruits.map(function (fruit) {
+  return fruit.length;
+});
+// lengths = [5, 6, 6]
+```
+
+---
+
+### filter
+
+Creates a new array with elements that pass a test.
+
+**Example:**
+
+```js
+let longFruits = fruits.filter(function (fruit) {
+  return fruit.length > 5;
+});
+// longFruits = ["banana", "orange"]
+```
