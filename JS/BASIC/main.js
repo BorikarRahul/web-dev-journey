@@ -138,7 +138,7 @@ while (i < 10) {
 */
 
 //  Loops in Object's
-
+/*
 const todos = [
     {
         id: 1,
@@ -155,7 +155,7 @@ const todos = [
         text: 'Dentist appt',
         isCompleted: false
     }
-];
+];*/
 
 /*
 for (let i = 0; i < todos.length; i++) {
@@ -190,7 +190,7 @@ const todoText2 = todos.filter(function (todo) {
     return todo.isCompleted === true;
 })
 console.log(todoText2);
-// to target on words 
+// to target on words
 const todoCompleted = todos.filter(function (todo) {
     return todo.isCompleted === true;
 }).map(function (todo) {
@@ -212,14 +212,14 @@ if (x === 10) {
 } // True
 if (x === '10') {
     console.log('x is 10');
-    // False 
+    // False
 }
 
 // if else
 
 if (x === '10') {
     console.log('x is 10');
-    // False 
+    // False
 } else if (x > 10) {
     console.log('x is greater than 10');
 } else {
@@ -227,14 +227,16 @@ if (x === '10') {
 }
 */
 
-//  || or 
-const x = 6;
-const y = 11;
+//  || or
+// const x = 6;
+// const y = 11;
 
-if (x > 5 || y > 10) {
-    console.log('x is more than 5 or y is more than 10');
+// if (x > 5 || y > 10) {
+//     console.log('x is more than 5 or y is more than 10');
 
-}
+// }
+
+
 
 
 
