@@ -800,6 +800,34 @@ An **array** in JavaScript is a special variable that can hold multiple values a
 
 ---
 
+### Interview Tips
+
+- Arrays are **zero-indexed** (`arr[0]` is the first element).
+- Arrays can store **any data type**, including objects and other arrays (nested arrays).
+- Arrays are **dynamic** (can grow or shrink in size).
+- Use array methods (`push`, `pop`, `shift`, `unshift`, `map`, `filter`, `reduce`, etc.) for efficient data manipulation.
+- Arrays are objects in JavaScript (`typeof arr === "object"`).
+- `find` and `findIndex` help locate elements.
+- `every` and `some` are used for testing conditions on arrays.
+- `sort` arranges elements (be careful with numbers!).
+- `join` creates a string from array elements.
+- `indexOf` and `includes` are used for searching.
+- `slice` creates a new array without changing the original.
+- `splice` changes the original array (add/remove elements).
+- `reverse` reverses the original array
+
+---
+
+**Example Interview Question:**  
+_"How would you reverse an array in JavaScript?"_
+
+**Answer:**
+
+```js
+let arr = [1, 2, 3];
+arr.reverse(); // [3, 2, 1]
+```
+
 ### Creating Arrays
 
 ```js
@@ -827,7 +855,7 @@ console.log(fruits); // Output: ["apple", "mango", "orange"]
 
 ---
 
-### Common Array Methods
+### Common Array Methods : Push, Pop, Shift, Unshift, Length, forEach, Map, indexOf, includes, slice, splice, reverse
 
 ```js
 let numbers = [1, 2, 3];
@@ -857,32 +885,6 @@ let squares = numbers.map(function (num) {
   return num * num;
 }); // [1, 4, 9]
 ```
-
----
-
-### Interview Tips
-
-- Arrays are **zero-indexed** (`arr[0]` is the first element).
-- Arrays can store **any data type**, including objects and other arrays (nested arrays).
-- Arrays are **dynamic** (can grow or shrink in size).
-- Use array methods (`push`, `pop`, `shift`, `unshift`, `map`, `filter`, `reduce`, etc.) for efficient data manipulation.
-- Arrays are objects in JavaScript (`typeof arr === "object"`).
-
----
-
-**Example Interview Question:**  
-_"How would you reverse an array in JavaScript?"_
-
-**Answer:**
-
-```js
-let arr = [1, 2, 3];
-arr.reverse(); // [3, 2, 1]
-```
-
----
-
-### Common Array Methods: indexOf, includes, slice, splice, reverse
 
 #### 1. `indexOf`
 
@@ -948,12 +950,94 @@ console.log(arr); // [3, 2, 1]
 
 ---
 
-**Summary:**
+#### 1. `find`
 
-- `indexOf` and `includes` are used for searching.
-- `slice` creates a new array without changing the original.
-- `splice` changes the original array (add/remove elements).
-- `reverse` reverses the original array
+Returns the **first element** in the array that satisfies the provided testing function. Returns `undefined` if no element matches.
+
+```js
+let numbers = [5, 12, 8, 130, 44];
+let found = numbers.find((num) => num > 10);
+console.log(found); // Output: 12
+```
+
+---
+
+#### 2. `findIndex`
+
+Returns the **index** of the first element that satisfies the testing function. Returns `-1` if not found.
+
+```js
+let numbers = [5, 12, 8, 130, 44];
+let index = numbers.findIndex((num) => num > 100);
+console.log(index); // Output: 3
+```
+
+---
+
+#### 3. `every`
+
+Checks if **all elements** in the array pass the test implemented by the provided function. Returns `true` or `false`.
+
+```js
+let numbers = [2, 4, 6];
+let allEven = numbers.every((num) => num % 2 === 0);
+console.log(allEven); // Output: true
+```
+
+---
+
+#### 4. `some`
+
+Checks if **at least one element** in the array passes the test. Returns `true` or `false`.
+
+```js
+let numbers = [1, 3, 5, 8];
+let hasEven = numbers.some((num) => num % 2 === 0);
+console.log(hasEven); // Output: true
+```
+
+---
+
+#### 5. `sort`
+
+Sorts the elements of an array **in place** and returns the sorted array.
+
+- **Strings (default):**
+
+```js
+let fruits = ["banana", "apple", "cherry"];
+fruits.sort();
+console.log(fruits); // Output: ["apple", "banana", "cherry"]
+```
+
+- **Numbers (need a compare function):**
+
+```js
+let numbers = [40, 1, 5, 200];
+numbers.sort(); // Incorrect: [1, 200, 40, 5] (sorts as strings)
+numbers.sort((a, b) => a - b); // Correct: [1, 5, 40, 200]
+console.log(numbers);
+```
+
+---
+
+#### 6. `join`
+
+Joins all elements of an array into a string, separated by a specified separator.
+
+```js
+let fruits = ["apple", "banana", "cherry"];
+let result = fruits.join(", ");
+console.log(result); // Output: "apple, banana, cherry"
+```
 
 **Summary:**  
 Arrays are fundamental in JavaScript for handling lists of data. Understanding how to create, access, and manipulate arrays
+
+---
+
+## JavaScript Objects
+
+Objects in JavaScript are collections of key-value pairs, where each key is a string (or Symbol) and the value can be any data type, including other objects or functions. Objects are used to store structured data and represent real-world entities.
+
+### Explanation & Interview Perspective
