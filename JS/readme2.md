@@ -448,11 +448,21 @@ let squares = numbers.map(function (num) {
 let evens = numbers.filter(function (num) {
   return num % 2 === 0;
 });
+let numbers = [1, 2, 3, 4];
+let even = numbers.filter((num) => num % 2 === 0);
 // evens = [2, 4]
 
 numbers.forEach(function (num) {
   console.log(num);
 });
+
+let number = [1, 2, 3, 4];
+let sum = number.reduce((acc, num) => acc + num, 0);
+// sum = 10
+// Using reduce to sum all numbers in the array
+//                                                                        (accumulator first value = 0)
+// numbers.reduce((accumulator, currentValue(num)) => accumulator + currentValue(num), 0);
+// sum = 10
 ```
 
 ---
@@ -537,3 +547,413 @@ Use async/await for cleaner and more readable asynchronous code, especially when
 Use functions to keep your code DRY (Don't Repeat Yourself) and organized. If you find yourself writing the same code multiple times, consider creating a function to encapsulate that logic.
 
 ---
+
+## Conditional Statements in JavaScript
+
+Conditional statements are used to perform different actions based on different conditions. They help control the flow of your program.
+
+---
+
+### 1. if Statement
+
+Executes a block of code if a specified condition is true.
+
+```js
+let age = 20;
+if (age >= 18) {
+  console.log("You are an adult.");
+}
+```
+
+---
+
+### 2. if...else Statement
+
+Executes one block if the condition is true, another block if it is false.
+
+```js
+let age = 16;
+if (age >= 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are a minor.");
+}
+```
+
+---
+
+### 3. else if Statement
+
+Checks multiple conditions in sequence.
+
+```js
+let score = 75;
+if (score >= 90) {
+  console.log("Excellent");
+} else if (score >= 60) {
+  console.log("Good");
+} else {
+  console.log("Needs Improvement");
+}
+```
+
+---
+
+### 4. Nested if
+
+An if statement inside another if statement.
+
+```js
+let num = 10;
+if (num > 0) {
+  if (num % 2 === 0) {
+    console.log("Positive even number");
+  } else {
+    console.log("Positive odd number");
+  }
+}
+```
+
+---
+
+### 5. switch Statement
+
+Selects one of many code blocks to be executed.
+
+```js
+let day = 3;
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Another day");
+}
+```
+
+- **break** is used to exit the switch after a case matches.
+- **default** runs if no case matches.
+
+---
+
+### 6. Ternary Operator
+
+A shorthand for if...else.  
+Syntax: `condition ? exprIfTrue : exprIfFalse`
+
+```js
+let age = 18;
+let status = age >= 18 ? "Adult" : "Minor";
+console.log(status); // Output: Adult
+```
+
+---
+
+**Summary:**
+
+- Use `if`, `else if`, and `else` for simple and multiple conditions.
+- Use `switch` for multiple possible values of a single variable.
+- Use the ternary operator for concise conditional
+
+---
+
+## Loops in JavaScript
+
+Loops are used to execute a block of code repeatedly until a specified condition is met. They help automate repetitive tasks and iterate over collections like arrays or objects.
+
+---
+
+### 1. for Loop
+
+Executes a block of code a specific number of times.
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log(i); // Output: 0, 1, 2, 3, 4
+}
+for (let i = 5; i >= 0; i--) {
+  console.log(i); // Output: 5, 4, 3, 2, 1, 0
+}
+```
+
+---
+
+### 2. while Loop
+
+Executes a block of code as long as a specified condition is true.
+
+```js
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+let j = 5;
+while (j >= 0) {
+  console.log(j);
+  j--;
+}
+```
+
+---
+
+### 3. do...while Loop
+
+Executes a block of code once, and then repeats the loop as long as the condition is true.
+
+```js
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+```
+
+---
+
+### 4. for...of Loop
+
+Iterates over iterable objects like arrays, strings, etc.
+
+```js
+let fruits = ["apple", "banana", "orange"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+---
+
+### 5. for...in Loop
+
+Iterates over the enumerable properties of an object.
+
+```js
+let person = { name: "Rahul", age: 25 };
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}
+```
+
+---
+
+### 6. Array Methods as Loops
+
+#### forEach
+
+Executes a provided function once for each array element.
+
+```js
+let numbers = [1, 2, 3];
+numbers.forEach(function (num) {
+  console.log(num);
+});
+```
+
+#### map
+
+Creates a new array by applying a function to each element.
+
+```js
+let squares = numbers.map(function (num) {
+  return num * num;
+});
+// squares = [1, 4, 9]
+let num = [1, 2, 3];
+let doubled = num.map((num) => num * 2);
+// doubled = [2, 4, 6]
+```
+
+---
+
+**Summary:**
+
+- Use `for`, `while`, and `do...while` for general looping.
+- Use `for...of` for arrays and iterable objects.
+- Use `for...in` for object properties.
+- Use array methods like `forEach` and `map` for cleaner, functional-style looping.
+
+---
+
+## Arrays in JavaScript
+
+### Explanation & Interview Perspective
+
+An **array** in JavaScript is a special variable that can hold multiple values at once, stored in an ordered list. Arrays are used to store collections of data, such as numbers, strings, objects, or even other arrays. Each value in an array is called an **element**, and each element has a numeric **index** starting from 0.
+
+**Definition for Interviews:**  
+"An array in JavaScript is an ordered, zero-indexed collection of elements that can hold values of any data type. Arrays are dynamic, meaning their size can change, and they provide various built-in methods for adding, removing, and manipulating elements."
+
+---
+
+### Why use Arrays?
+
+- To store and manage lists of data efficiently.
+- To perform operations on collections (like sorting, filtering, mapping).
+- To iterate over multiple values using loops or array methods.
+
+---
+
+### Creating Arrays
+
+```js
+// Using array literal
+let fruits = ["apple", "banana", "orange"];
+
+// Using Array constructor
+let numbers = new Array(1, 2, 3, 4);
+
+// Arrays can hold mixed data types
+let mixed = [1, "hello", true, null];
+```
+
+---
+
+### Accessing and Modifying Elements
+
+```js
+let fruits = ["apple", "banana", "orange"];
+console.log(fruits[0]); // Output: apple
+
+fruits[1] = "mango"; // Change "banana" to "mango"
+console.log(fruits); // Output: ["apple", "mango", "orange"]
+```
+
+---
+
+### Common Array Methods
+
+```js
+let numbers = [1, 2, 3];
+
+// Add element
+numbers.push(4); // [1, 2, 3, 4]
+
+// Remove last element
+numbers.pop(); // [1, 2, 3]
+
+// Add element at the beginning
+numbers.unshift(0); // [0, 1, 2, 3]
+
+// Remove first element
+numbers.shift(); // [1, 2, 3]
+
+// Find length
+console.log(numbers.length); // 3
+
+// Iterate using forEach
+numbers.forEach(function (num) {
+  console.log(num);
+});
+
+// Create new array with map
+let squares = numbers.map(function (num) {
+  return num * num;
+}); // [1, 4, 9]
+```
+
+---
+
+### Interview Tips
+
+- Arrays are **zero-indexed** (`arr[0]` is the first element).
+- Arrays can store **any data type**, including objects and other arrays (nested arrays).
+- Arrays are **dynamic** (can grow or shrink in size).
+- Use array methods (`push`, `pop`, `shift`, `unshift`, `map`, `filter`, `reduce`, etc.) for efficient data manipulation.
+- Arrays are objects in JavaScript (`typeof arr === "object"`).
+
+---
+
+**Example Interview Question:**  
+_"How would you reverse an array in JavaScript?"_
+
+**Answer:**
+
+```js
+let arr = [1, 2, 3];
+arr.reverse(); // [3, 2, 1]
+```
+
+---
+
+### Common Array Methods: indexOf, includes, slice, splice, reverse
+
+#### 1. `indexOf`
+
+Returns the first index at which a given element can be found in the array, or -1 if it is not present.
+
+```js
+let fruits = ["apple", "banana", "orange"];
+console.log(fruits.indexOf("banana")); // Output: 1
+console.log(fruits.indexOf("grape")); // Output: -1
+```
+
+---
+
+#### 2. `includes`
+
+Checks if an array contains a certain value. Returns `true` or `false`.
+
+```js
+let fruits = ["apple", "banana", "orange"];
+console.log(fruits.includes("banana")); // Output: true
+console.log(fruits.includes("grape")); // Output: false
+```
+
+---
+
+#### 3. `slice` (Does NOT change the original array)
+
+Returns a shallow copy of a portion of an array into a new array, selected from `start` to `end` (end not included).
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+let sliced = numbers.slice(1, 4); // [2, 3, 4]
+console.log(numbers); // [1, 2, 3, 4, 5] (original array unchanged)
+```
+
+---
+
+#### 4. `splice` (Changes the original array)
+
+Adds/removes elements from an array. Returns an array of removed elements.
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+// Remove 2 elements starting from index 1
+let removed = numbers.splice(1, 2); // removed = [2, 3]
+console.log(numbers); // [1, 4, 5] (original array changed)
+
+// Insert elements at index 1
+numbers.splice(1, 0, 10, 20); // numbers = [1, 10, 20, 4, 5]
+```
+
+---
+
+#### 5. `reverse` (Changes the original array)
+
+Reverses the order of the elements in the array.
+
+```js
+let arr = [1, 2, 3];
+arr.reverse();
+console.log(arr); // [3, 2, 1]
+```
+
+---
+
+**Summary:**
+
+- `indexOf` and `includes` are used for searching.
+- `slice` creates a new array without changing the original.
+- `splice` changes the original array (add/remove elements).
+- `reverse` reverses the original array
+
+**Summary:**  
+Arrays are fundamental in JavaScript for handling lists of data. Understanding how to create, access, and manipulate arrays
