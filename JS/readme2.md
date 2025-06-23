@@ -33,7 +33,7 @@ JavaScript can be used to build mobile applications using frameworks like React 
 **In summary:**  
 JavaScript is essential for modern web development, enabling you to build
 
-## JavaScript Variable Types (with Examples & Descriptions)
+## **JavaScript Variable Types (with Examples & Descriptions)**
 
 Below are the main variable types in JavaScript, along with examples and descriptions—useful for interviews:
 
@@ -186,7 +186,7 @@ console.log(typeof bigNumber); // "bigint"
 - You cannot mix `BigInt` and `Number` in operations directly.
 - Use BigInt for precise, large integer calculations.
 
-## JavaScript Operators with Examples
+## **JavaScript Operators with Examples**
 
 - Arithmetic Operators: `+`, `-`, `*`, `/`, `%`
 - Assignment Operators: `=`, `+=`, `-=`, `*=`, `/=`
@@ -258,7 +258,7 @@ console.log(typeof bigNumber); // "bigint"
 - `>>` right shift: `5 >> 1 // 2`
 - `>>>` unsigned right shift: `5 >>> 1
 
-## Functions in JavaScript
+## **Functions in JavaScript**
 
 Functions in JavaScript are reusable blocks of code that perform a specific task. They can take inputs (parameters) and return outputs (values).
 Functions can be defined in several ways, including function declarations, function expressions, and arrow functions.
@@ -353,7 +353,7 @@ IIFEs (Immediately Invoked Function Expressions)
 })();
 ```
 
-## IIFE (Immediately Invoked Function Expression)
+## **IIFE (Immediately Invoked Function Expression)**
 
 An **IIFE** is a function in JavaScript that runs as soon as it is defined.  
 It is often used to create a private scope and avoid polluting the global namespace.
@@ -391,7 +391,7 @@ It is often used to create a private scope and avoid polluting the global namesp
 
 ---
 
-## Higher-Order Functions (HOF) in JavaScript
+## **Higher-Order Functions (HOF) in JavaScript**
 
 A **Higher-Order Function (HOF)** is a function that does at least one of the following:
 
@@ -478,7 +478,7 @@ let sum = number.reduce((acc, num) => acc + num, 0);
 **Summary:**  
 A higher-order function is any function that takes another function as an argument or returns a function. They are widely used in JavaScript for tasks like array processing,
 
-## Async Functions in JavaScript
+## **Async Functions in JavaScript**
 
 An **async function** is a special type of function in JavaScript that allows you to write asynchronous code using the `async` and `await` keywords. Async functions always return a **Promise** and make it easier to work with asynchronous operations like fetching data from a server.
 
@@ -548,7 +548,7 @@ Use functions to keep your code DRY (Don't Repeat Yourself) and organized. If yo
 
 ---
 
-## Conditional Statements in JavaScript
+## **Conditional Statements in JavaScript**
 
 Conditional statements are used to perform different actions based on different conditions. They help control the flow of your program.
 
@@ -663,8 +663,9 @@ console.log(status); // Output: Adult
 
 ---
 
-## Loops in JavaScript
+## \*\*Loops in JavaScript
 
+\*\*
 Loops are used to execute a block of code repeatedly until a specified condition is met. They help automate repetitive tasks and iterate over collections like arrays or objects.
 
 ---
@@ -781,7 +782,7 @@ let doubled = num.map((num) => num * 2);
 
 ---
 
-## Arrays in JavaScript
+## **Arrays in JavaScript**
 
 ### Explanation & Interview Perspective
 
@@ -800,7 +801,57 @@ An **array** in JavaScript is a special variable that can hold multiple values a
 
 ---
 
+## **How to Clone an Array into an Object in JavaScript**
+
+If you want to convert (clone) an array into an object, you can use several methods. Here are the most common approaches:
+
+---
+
+### 1. Using `Object.assign()`
+
+This method copies array elements as properties with numeric keys.
+
+```js
+let arr = ["a", "b", "c"];
+let obj = Object.assign({}, arr);
+console.log(obj); // {0: "a", 1: "b", 2: "c"}
+```
+
+---
+
+### 2. Using the Spread Operator
+
+The spread operator works similarly to `Object.assign()` for this purpose.
+
+```js
+let arr = ["x", "y", "z"];
+let obj = { ...arr };
+console.log(obj); // {0: "x", 1: "y", 2: "z"}
+```
+
+---
+
+### 3. Creating a Custom Object (with custom keys)
+
+If you want to assign custom keys, use `reduce`:
+
+```js
+let arr = ["apple", "banana", "cherry"];
+let obj = arr.reduce((acc, curr, idx) => {
+  acc["fruit" + idx] = curr;
+  return acc;
+}, {});
+console.log(obj); // {fruit0: "apple", fruit1: "banana", fruit2: "cherry"}
+```
+
+---
+
 ### Interview Tips
+
+**Interview Tip:**
+
+- Using `Object.assign({}, arr)` or `{ ...arr }` will create an object with numeric keys corresponding to array indices.
+- For custom keys, use `reduce` or a loop to build the object as needed.
 
 - Arrays are **zero-indexed** (`arr[0]` is the first element).
 - Arrays can store **any data type**, including objects and other arrays (nested arrays).
@@ -1036,8 +1087,134 @@ Arrays are fundamental in JavaScript for handling lists of data. Understanding h
 
 ---
 
-## JavaScript Objects
+## **JavaScript Objects**
 
 Objects in JavaScript are collections of key-value pairs, where each key is a string (or Symbol) and the value can be any data type, including other objects or functions. Objects are used to store structured data and represent real-world entities.
 
-### Explanation & Interview Perspective
+Pair of Key-value pairs, where keys are strings (or Symbols) and values can be any data type (including functions).
+
+### Why use Objects?
+
+- To group related data and functionality together.
+- To model real-world entities (like a person, car, etc.).
+- To create complex data structures (like nested objects).
+- To encapsulate behavior (methods) along with data (properties).
+- To create reusable components (like classes in OOP).
+- To manage application state and configuration.
+- To pass structured data between functions or APIs.
+
+Objects in JavaScript are collections of key-value pairs, where keys are strings (or Symbols) and values can be any data type, including functions (called methods). Objects are used to model real-world entities and store structured data.
+
+---
+
+### Creating an Object
+
+```js
+let person = {
+  name: "Rahul",
+  age: 25,
+  isStudent: true,
+  greet: function () {
+    console.log("Hello, " + this.name);
+  },
+};
+```
+
+---
+
+### Common Object Methods
+
+#### 1. Object.keys()
+
+Returns an array of the object's own property names (keys).
+
+```js
+let keys = Object.keys(person);
+console.log(keys); // ["name", "age", "isStudent", "greet"]
+```
+
+#### 2. Object.values()
+
+Returns an array of the object's own property values.
+
+```js
+let values = Object.values(person);
+console.log(values); // ["Rahul", 25, true, function]
+```
+
+#### 3. Object.entries()
+
+Returns an array of key-value pairs.
+
+```js
+let entries = Object.entries(person);
+console.log(entries);
+// [["name", "Rahul"], ["age", 25], ["isStudent", true], ["greet", function]]
+```
+
+#### 4. hasOwnProperty()
+
+Checks if the object has a specific property.
+
+```js
+console.log(person.hasOwnProperty("age")); // true
+console.log(person.hasOwnProperty("address")); // false
+```
+
+#### 5. Adding/Modifying/Deleting Properties
+
+```js
+person.city = "Mumbai"; // Add
+person.age = 26; // Modify
+delete person.isStudent; // Delete
+```
+
+#### 6. Defining Methods
+
+```js
+person.sayBye = function () {
+  console.log("Bye, " + this.name);
+};
+person.sayBye(); // Output: Bye, Rahul
+```
+
+---
+
+### Interview Questions & Answers
+
+**Q1: What is an object in JavaScript?**  
+A: An object is a collection of key-value pairs, where keys are strings (or Symbols) and values can be any data type, including functions (methods).
+
+**Q2: How do you access and update object properties?**  
+A: Use dot notation (`person.name`) or bracket notation (`person["name"]`). Update by assignment: `person.age = 30;`
+
+**Q3: How do you loop through all properties of an object?**  
+A:
+
+```js
+for (let key in person) {
+  console.log(key, person[key]);
+}
+```
+
+Or use `Object.keys(person).forEach(key => console.log(key, person[key]));`
+
+**Q4: How do you check if a property exists in an object?**  
+A: Use `"property" in object` or `object.hasOwnProperty("property")`.
+
+**Q5: What is the difference between a method and a property?**  
+A: A property holds a value (string, number, etc.), while a method is a function stored as a property.
+
+**Q6: How do you clone an object?**  
+A:
+
+```js
+let clone = Object.assign({}, person);
+// or using spread operator
+let clone2 = { ...person };
+```
+
+---
+
+**Summary:**  
+Objects are fundamental in JavaScript for modeling and managing structured data. Mastering object creation, property access, and built-in methods is essential for interviews and real-
